@@ -63,7 +63,7 @@ void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 				else
 					++index;
 			}
-			// Pushes the index of the first vertex in the queue.
+			// Pushes the index of the first vertex into the queue.
 			bfsQueue.push(index);
 			int visitedCounter = 1; 
 
@@ -76,16 +76,19 @@ void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 				if (visitedCounter != numOfVertices) 
 				{
 					int col = index;
-					// Traverse through the successors of the bfsQueue.front();
+					// Traverse through the matrix and search for the successors of the bfsQueue.front();
 					for (int row = 0; row < numOfVertices; ++row)
 					{
-						// If the condition is true, add the index of vertex in the queue
+						// If this condition is true, add the index of vertex in the queue
 						// row == successor's index
 						if ((matrix[row][col] == 1) && (!visited[row])) 
 						{
 							bfsQueue.push(row);
 							++visitedCounter;
 							visited[row] = true;
+							// This condition will force stop the for loop if it's true.
+							if (visitedCounter == numOfVertices)
+								row = numOfVertices;
 						}
 					}
 				}
