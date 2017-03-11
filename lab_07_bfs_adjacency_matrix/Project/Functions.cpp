@@ -41,7 +41,7 @@ Graph::~Graph()
 // Definition function bfsTraversal
 void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 {
-	// if gSize == 0 or less than 0 then do nothing.
+	// if numOfVertices == 0 or less than 0 then do nothing.
 	if (numOfVertices > 0)  
 	{
 		if (numOfVertices == 1)
