@@ -79,7 +79,7 @@ void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 					// Traverse through the successors of the bfsQueue.front();
 					for (int row = 0; row < numOfVertices; ++row)
 					{
-						// If this is true, add the index of vertex in the queue
+						// If the condition is true, add the index of vertex in the queue
 						// row == successor's index
 						if ((matrix[row][col] == 1) && (!visited[row])) 
 						{
