@@ -56,8 +56,12 @@ void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 			bool* visited = new bool[numOfVertices](); 
 			// Finds the index of the char vertex.
 			int index = 0;
+			// This will loop until it finds vertices[index] that is equals to vertex.
+			// Increments index everytime vertices[index] != vertex
 			while (!visited[index])
 			{
+				// If this condition has been met, turns visited[index] to true
+				// and loop ends.
 				if (vertices[index] == vertex)
 					visited[index] = true;
 				else
@@ -66,7 +70,6 @@ void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 			// Pushes the index of the first vertex into the queue.
 			bfsQueue.push(index);
 			int visitedCounter = 1; 
-
 			// This loops until all vertexes are in the BFS.
 			do
 			{
