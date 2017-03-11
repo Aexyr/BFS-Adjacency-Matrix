@@ -13,13 +13,12 @@
 // Definition function clearGraph
 void Graph::clearGraph()
 {
-	numOfVertices = 0;
-
-	vertices = new char[maxVertices];
-
-	matrix = new int *[maxVertices];
 	for (int i = 0; i < maxVertices; ++i)
+	{
+		delete matrix[i];
 		matrix[i] = new int[maxVertices](); // The parenthesis will initialize the array to 0
+	}
+	numOfVertices = 0;
 }
 
 // Definition of destructor
@@ -28,6 +27,10 @@ Graph::~Graph()
 	delete[] vertices;
 	vertices = nullptr;
 
+	for (int i = 0; i < maxVertices; ++i)
+	{
+		delete matrix[i];
+	}
 	delete[] matrix;
 	matrix = nullptr;
 
