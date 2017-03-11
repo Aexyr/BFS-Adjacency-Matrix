@@ -81,7 +81,7 @@ void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 					{
 						// If this is true, add the index of vertex in the queue
 						// row == successor's index
-						if ((matrix[row][col] == 1) && (visited[row] != true)) 
+						if ((matrix[row][col] == 1) && (!visited[row])) 
 						{
 							bfsQueue.push(row);
 							++visitedCounter;
