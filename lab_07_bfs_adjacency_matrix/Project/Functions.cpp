@@ -51,7 +51,7 @@ void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 		else  
 		{
 			queue<int> bfsQueue;
-			// Dynamic array of visited vertices.
+			// Dynamic bool array of visited vertices.
 			// Sets to true if index of the vertex has been visited.
 			bool* visited = new bool[numOfVertices](); 
 			// Finds the index of the char vertex.
@@ -98,6 +98,7 @@ void Graph::bfsTraversal(char vertex, vector<char>& bfs) const
 				}
 				bfsQueue.pop();
 			} while (!bfsQueue.empty());
+			// Delete the created array that stores the visited vertices  
 			delete[] visited;
 		}
 	}
