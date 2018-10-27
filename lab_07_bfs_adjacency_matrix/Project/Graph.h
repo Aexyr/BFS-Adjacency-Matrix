@@ -11,6 +11,7 @@ const int MAX_VERTICES = 20;
 
 class Graph
 {
+	// Overloading << operator for output. 
 	friend ostream& operator<<(ostream& out, const Graph& g);
 
 public:
