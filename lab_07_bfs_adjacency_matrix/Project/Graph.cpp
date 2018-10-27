@@ -2,6 +2,7 @@
 
 ostream& operator<<(ostream& out, const Graph& g)
 {
+	// Traverse through the graph and output data from vertex
 	for (int i = 0; i < g.numOfVertices; ++i)
 	{
 		out << g.vertices[i] << ": ";
